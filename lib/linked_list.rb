@@ -1,11 +1,11 @@
-require "node"
+require_relative "node"
 
 class LinkedList
-attr_reader :head, :current
+attr_reader :head, :position
 
   def initialize
     @head = nil
-    @current = 0
+    @position = 0
   end
 
   def head
@@ -17,14 +17,16 @@ attr_reader :head, :current
 
     if @head.nil?
       @head = node_input
-    elsif @head != nil
-      @current.next = node_input
-      @current =  @current.next
-    elsif @current.next.nil?
-      @current = node_input
+      @position = @head
     end
-
+      # current_node = @head
+      # until current_node.next.node == nil
+      #   current_node = curennt_node.next_node
+      # end
+      # current_node = node_input
     node_input.data
-
   end
+
+
+
 end
