@@ -1,17 +1,30 @@
+require "node"
+
 class LinkedList
-attr_reader :list
+attr_reader :head, :current
 
   def initialize
-    @list = list
+    @head = nil
+    @current = 0
   end
 
   def head
-    @list
+    @head
   end
 
-  def append(newstring)
-    @list = @list.to_s + newstring
+  def append(new_string)
+    node_input = Node.new(new_string)
+
+    if @head.nil?
+      @head = node_input
+    elsif @head != nil
+      @current.next = node_input
+      @current =  @current.next
+    elsif @current.next.nil?
+      @current = node_input
+    end
+
+    node_input.data
+
   end
-
-
 end
