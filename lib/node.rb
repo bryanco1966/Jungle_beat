@@ -1,14 +1,14 @@
 class Node
   attr_accessor :next_node
-  attr_reader :data
+  attr_reader :sound
 
 
-  def initialize (data)
-    @data = data
+  def initialize (sound)
+    @sound = sound
     @next = next_node
   end
-  def data
-    @data
+  def sound
+    @sound
   end
   def next_node
     @next_node

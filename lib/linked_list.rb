@@ -4,8 +4,8 @@ class LinkedList
 attr_reader :head, :position
 
   def initialize
-    @head = nil
-    @position = 0
+    @head = head
+
   end
 
   def head
@@ -17,15 +17,32 @@ attr_reader :head, :position
 
     if @head.nil?
       @head = node_input
-      @position = @head
+    else
+      current_node = @head
+      while current_node.next_node != nil
+        current_node = current_node.next_node
+      end
+      current_node.next_node = node_input
     end
-      # current_node = @head
-      # until current_node.next.node == nil
-      #   current_node = curennt_node.next_node
-      # end
-      # current_node = node_input
-    node_input.data
+
+    def count
+      current_node = @head
+      count = 0
+      while current_node.nextnode != nil
+        current_node = current_node.next_node
+        count +=1
+      end
+   count 
+    end
+
+
+
+
+
+
   end
+
+
 
 
 
